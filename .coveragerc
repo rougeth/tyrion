@@ -1,0 +1,12 @@
+[run]
+branch = True
+include =
+    src/url_shortener/*
+omit =
+    **/tests/**
+    **/migrations/**
+    */admin.py
+    piny/wsgi.py
+
+[report]
+show_missing = True
