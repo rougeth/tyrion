@@ -15,5 +15,5 @@ install:
 script:
   - flake8
   - isort -c
-  - coverage run --source . src/manage.py test
+  - coverage run --source . src/manage.py test src
   - coverage report --fail-under=100
