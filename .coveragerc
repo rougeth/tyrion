@@ -1,12 +1,12 @@
 [run]
 branch = True
 include =
-    src/url_shortener/*
+    src/shortener/*
 omit =
     **/tests/**
     **/migrations/**
     */admin.py
-    piny/wsgi.py
+    tyrion/wsgi.py
 
 [report]
 show_missing = True

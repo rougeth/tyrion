@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'url_shortener',
+
+    'shortener',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+try:
+    from .localsettings import *  # noqa
+except ImportError:
+    import warnings
+    warnings.simplefilter('once')
+    warnings.warn('Could not import localsettings', ImportWarning)
