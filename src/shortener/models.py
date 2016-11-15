@@ -17,5 +17,6 @@ class Url(models.Model):
         return h
 
     def save(self, *args, **kwargs):
-        self.hash = self._generate_hash()
+        if not self.hash:
+            self.hash = self._generate_hash()
         super(Url, self).save(*args, **kwargs)
