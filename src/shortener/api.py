@@ -6,7 +6,8 @@ from .models import Url
 
 class UrlResource(DjangoResource):
     preparer = FieldsPreparer(fields={
-        'url': 'url'
+        'url': 'url',
+        'hash': 'hash'
     })
 
     def is_authenticated(self):
@@ -16,3 +17,12 @@ class UrlResource(DjangoResource):
         return Url.objects.create(
             url=self.data['url']
         )
+
+    def list(self):
+        return Url.objects.all()
+
+    def detail(self, pk):
+        return Url.objects.get(id=pk)
+
+    def delete(self, pk):
+        Url.objects.get(id=pk).delete()
