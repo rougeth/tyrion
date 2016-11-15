@@ -4,5 +4,5 @@ from .api import UrlResource
 
 
 urlpatterns = [
-    url(r'api/url', include(UrlResource.urls())),
+    url(r'api/url/', include(UrlResource.urls())),
 ]
