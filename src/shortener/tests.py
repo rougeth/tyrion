@@ -10,7 +10,7 @@ class ShortURLTest(TestCase):
     def test__str__(self):
         url = 'localhost'
         hash = 'abc'
-        u = Url(url=url, hash=hash)
+        u = Url(url=url, short=hash)
         self.assertEqual(str(u), '{}:{}'.format(url, hash))
 
     def test_create_url(self):
@@ -25,9 +25,9 @@ class ShortURLTest(TestCase):
         self.assertEqual(response.status_code, 201)
 
         url = Url.objects.get(id=1)
-        hash = url.hash
+        hash = url.short
         url.save()
-        updated_hash = url.hash
+        updated_hash = url.short
         self.assertEqual(hash, updated_hash)
 
         url = Url.objects.get(id=1)
@@ -59,11 +59,11 @@ class ShortURLTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         url_response = response.json()['url']
-        hash_response = response.json()['hash']
+        hash_response = response.json()['short']
         url = Url.objects.get(id=1)
 
         self.assertEqual(url.url, url_response)
-        self.assertEqual(url.hash, hash_response)
+        self.assertEqual(url.short, hash_response)
         self.assertEqual(url.url, 'localhost')
         self.assertEqual(url_response, 'localhost')
 
