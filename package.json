@@ -1,0 +1,8 @@
+{
+  "name": "tyrion",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
+  }
+}
