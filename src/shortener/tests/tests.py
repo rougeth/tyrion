@@ -3,16 +3,10 @@ import json
 from django.test import TestCase
 from django.urls import reverse
 
-from .models import Url
+from shortener.models import Url
 
 
 class ShortURLTest(TestCase):
-    def test__str__(self):
-        url = 'localhost'
-        hash = 'abc'
-        u = Url(url=url, short=hash)
-        self.assertEqual(str(u), '{}:{}'.format(url, hash))
-
     def test_create_url(self):
         # need to test expected answer
         create_url_endpoint = reverse('api_url_list')
