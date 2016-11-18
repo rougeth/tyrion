@@ -7,7 +7,7 @@ from .models import Url
 class UrlResource(DjangoResource):
     preparer = FieldsPreparer(fields={
         'url': 'url',
-        'hash': 'hash'
+        'short': 'short'
     })
 
     def is_authenticated(self):
