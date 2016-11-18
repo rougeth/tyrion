@@ -4,6 +4,9 @@ module.exports = {
     path: './src/static/app/dist',
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: './src/static/app'
+  },
   module: {
     loaders: [{
       test: /\.js$/,
