@@ -11,9 +11,10 @@
     "webpack": "^1.13.3"
   },
   "devDependencies": {
+    "babel-preset-react-hmre": "^1.1.1",
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline"
+    "start": "webpack-dev-server --progress --inline --hot"
   }
 }

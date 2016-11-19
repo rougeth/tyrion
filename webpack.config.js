@@ -1,11 +1,17 @@
+var path = require('path');
+
+var staticPrefix = path.join(__dirname, 'src/static/app');
+var distPath = staticPrefix + '/dist';
+
+
 module.exports = {
-  entry: './src/static/app/app.js',
+  entry: staticPrefix + '/app.js',
   output: {
-    path: './src/static/app/dist',
+    path: distPath,
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src/static/app'
+    contentBase: staticPrefix
   },
   module: {
     loaders: [{
@@ -13,7 +19,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['es2015', 'react']
+        presets: ['es2015', 'react', 'react-hmre']
       }
     }]
   }
