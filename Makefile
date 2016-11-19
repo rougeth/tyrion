@@ -11,4 +11,9 @@ test-python:
 	coverage report --fail-under=100
 	@echo ""
 
-.PHONY: install-python test-python
+install-node:
+	@echo "--> Installing Node dependencies"
+	npm install
+	@echo ""
+
+.PHONY: install-python test-python install-node
