@@ -11,7 +11,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: staticPrefix
+    contentBase: staticPrefix,
+    historyApiFallback: true
   },
   module: {
     loaders: [{

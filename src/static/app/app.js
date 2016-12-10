@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
 
 
 class App extends React.Component {
@@ -8,4 +9,8 @@ class App extends React.Component {
   }
 };
 
-ReactDOM.render(<App/>, document.querySelector('#app'));
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path='/' component={App} />
+  </Router>
+), document.querySelector('#app'));
