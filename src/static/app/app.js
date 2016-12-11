@@ -2,15 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 
-
-class App extends React.Component {
-  render() {
-    return <h1>Hello, Tyrion!</h1>;
-  }
-};
+import Home from './home';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path='/' component={App} />
+    <Route path='/' component={Home} />
   </Router>
 ), document.querySelector('#app'));
