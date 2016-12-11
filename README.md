@@ -1,4 +1,6 @@
 # Tyrion
+![tyrion](https://media.giphy.com/media/NyvaiYod2ShwI/source.gif)
+
 
 ``` sh
 # Environment dependencies
