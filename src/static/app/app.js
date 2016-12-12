@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
 
+import Home from './home';
 
-class App extends React.Component {
-  render() {
-    return <h1>Hello, Tyrion!</h1>;
-  }
-};
-
-ReactDOM.render(<App/>, document.querySelector('#app'));
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path='/' component={Home} />
+  </Router>
+), document.querySelector('#app'));
