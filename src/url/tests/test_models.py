@@ -1,11 +1,11 @@
 from django.test import TestCase
 
-from shortener.models import Url
+from url.models import Url
 
 
 class TestUrlModel(TestCase):
     def setUp(self):
-        self.url = Url(id=123, url='example.com', ip='127.0.0.1')
+        self.url = Url(id=123, url='example.com')
 
     def test__str__(self):
         _str = self.url.__str__()

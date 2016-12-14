@@ -1,7 +1,7 @@
 [run]
 branch = True
 include =
-    src/shortener/*
+    src/url/*
 omit =
     **/tests/**
     **/migrations/**
