@@ -3,7 +3,7 @@ from django.db import models
 from pybaco import Baco
 
 
-class Url(models.Model):
+class URL(models.Model):
     url = models.URLField(max_length=512, unique=True)
 
     created = models.DateTimeField(auto_now_add=True)

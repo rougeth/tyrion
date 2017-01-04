@@ -1,8 +1,8 @@
 from django.conf.urls import include, url
 
-from .api import UrlResource
+from .api import URLResource
 
 
 urlpatterns = [
-    url(r'api/url/', include(UrlResource.urls())),
+    url(r'api/url/', include(URLResource.urls())),
 ]
