@@ -3,14 +3,14 @@ import json
 from django.test import TestCase
 from django.urls import reverse
 
-from url.models import Url
+from url.models import URL
 
 
 class URLAPITest(TestCase):
     # This class still need refactoring :/
 
     def setUp(self):
-        self.url = Url.objects.create(id=123, url='http://localhost')
+        self.url = URL.objects.create(id=123, url='http://localhost')
 
     def test_create_new_url(self):
         create_short_url = reverse('api_url_list')
@@ -29,7 +29,7 @@ class URLAPITest(TestCase):
         self.assertEqual(response_json['short'], '20')
 
         # Test database content
-        url = Url.objects.last()
+        url = URL.objects.last()
         self.assertEqual(url.url, data['url'])
         self.assertEqual(url.short, '20')
 
@@ -46,7 +46,7 @@ class URLAPITest(TestCase):
         self.assertEqual(response_json[0]['short'], '1z')
 
         # Test database content
-        url = Url.objects.last()
+        url = URL.objects.last()
         self.assertEqual(url.url, self.url.url)
         self.assertEqual(url.short, self.url.short)
 
@@ -68,4 +68,4 @@ class URLAPITest(TestCase):
         self.assertEqual(response.status_code, 204)
 
         # Test database content
-        self.assertFalse(Url.objects.filter(id=self.url.id).exists())
+        self.assertFalse(URL.objects.filter(id=self.url.id).exists())

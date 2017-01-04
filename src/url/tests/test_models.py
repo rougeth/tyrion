@@ -1,11 +1,11 @@
 from django.test import TestCase
 
-from url.models import Url
+from url.models import URL
 
 
 class TestUrlModel(TestCase):
     def setUp(self):
-        self.url = Url(id=123, url='example.com')
+        self.url = URL(id=123, url='example.com')
 
     def test__str__(self):
         _str = self.url.__str__()
