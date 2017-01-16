@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ops</title>
+  <style>
+    body  {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: "Helvetica", "Arial", sans-serif;
+      color: #8b380f;
+      font-weight: 300;
+    }
+
+    img {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h1>URL not found :(</h1>
+  <img src="{% static 'images/404.gif' %}" alt="">
+</body>
+</html>
