@@ -1,6 +1,7 @@
 Django>=1.10,<=1.11
 git+https://github.com/CraveFood/restkiss
 pybaco==0.3.0
+django-flat-responsive
 
 # Test
 coverage
